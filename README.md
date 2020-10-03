@@ -44,15 +44,3 @@ Now, you can work on the code to your heart's content. To test out the website, 
 -> npm start
 ```
 Then go to http://localhost:3000/ in your browser to view the purchasing system.
-
-### Downloading and uploading changes with Git
-
-You can upload your changes to GitHub with this command:
-```
--> git push origin master
-```
-
-If it's been a while since you downloaded the code, other people may have uploaded changes to the Github repository, which will prevent you from uploading your changes. Update your local repository with this command:
-```
--> git pull
-```
