@@ -1,6 +1,6 @@
 # Purchasing
 
-## Who is WWU Racing?
+## What is WWU Racing?
 
 WWU Racing is a club at Western Washington University that designs, manufactures, tests, and races a single–seater, formula style racecar every year. We compete in the Formula SAE California competition (formerly held in Lincoln, NE), along with over a hundred other universities from around the world. There are similar competitions all over the globe—Michigan, Canada, Brazil, the UK, Germany, Japan, and more.
 
