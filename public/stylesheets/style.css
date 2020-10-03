@@ -1,0 +1,530 @@
+:root {
+  --black: #1c2023;
+  --darkest-blue: #002f5e;
+  --dark-blue: #003f87;
+  --light-blue: #007ac8;
+  --light-gray: #e3e7e9;
+  --white: #f5f6f7;
+}
+
+body {
+  margin: 50px;
+  font: 18px "Fira Sans", Arial, sans-serif;
+  background-color: var(--light-gray);
+  color: var(--black);
+}
+
+a {
+  color: var(--light-blue);
+}
+
+p {
+  cursor: default;
+}
+
+button {
+  cursor: pointer;
+}
+
+#header {
+  display: table;
+  margin: 0 auto;
+}
+
+#logo {
+  display: inline-block;
+  width: 200px;
+}
+
+#headerSpacer {
+  display: inline-block;
+/*  position: absolute;*/
+  width: 3px;
+  height: 90px;
+  background-color: var(--darkest-blue);
+  margin: auto 30px;
+  top: 50%;
+  transform: translateY(-9px);
+  margin-top: 0px;
+}
+
+#headerText {
+  display: inline-block;
+  font-size: 50px;
+  transform: translateY(-60%);
+  margin: auto 0px;
+  width: 257.25px;
+  color: var(--dark-blue);
+  cursor: default;
+}
+
+#tabBar {
+  margin: 20px auto;
+  overflow: hidden;
+  width: 374.4px;
+  background-color: var(--light-gray);
+  /* border: 2px solid #003f87; */
+}
+
+.tabs {
+  display: inline-block;
+  background-color: inherit;
+  border: none;
+  border-bottom: 2px solid #003f87;
+  outline: none;
+  padding: 5px 10px;
+  transition: 0.3s;
+  font: 18px "Fira Sans";
+}
+
+#tabBar button:hover {
+  background-color: var(--light-blue);
+  color: var(--white);
+}
+
+#tabBar button.active {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+.tabContent {
+  display: none;
+}
+
+#contentPO {
+  position: relative;
+  margin: 0 auto;
+  width: 418px;
+}
+
+#or {
+  position: relative;
+  display: inline-block;
+  margin: 0 20px;
+  width: 17.5px;
+
+}
+
+.btnChoosePO {
+  position: relative;
+  display: inline-block;
+  font: 16px "Fira Sans";
+  padding: 7px 10px;
+    background-color: var(--light-gray);
+    color: var(--black);
+  border: 2px solid var(--dark-blue);
+  /* border-bottom: 2px solid #003f87; */
+  outline: none;
+  width: 180px;
+  transition: 0.3s;
+}
+
+#contentPO button:hover {
+  background-color: var(--light-blue);
+  color: var(--white);
+  padding: 7px 10px;
+  /* border: 2px solid #003f87; */
+}
+
+#contentPO button.active {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+#chooseSystemAndPO {
+  margin: 0 auto;
+}
+
+#systemList {
+  margin: 0 auto;
+  width: 143px;
+}
+
+#chooseSystemText {
+  margin: 10px auto;
+}
+
+.system {
+  position: relative;
+  display: block;
+  font: 16px "Fira Sans";
+  padding: 5px 10px;
+  border: none;
+  /* border: 1px solid #003f87; */
+  background-color: var(--light-gray);
+  color: var(--black);
+  outline: none;
+  width: 141px;
+  transition: .3s;
+}
+
+#chooseSystemButtons {
+  /* border: 1px solid #003f87; */
+}
+
+#chooseSystemButtons button:hover {
+  background-color: var(--light-blue);
+  color: var(--white);
+}
+
+#chooseSystemButtons button.active {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+#loadingPOs {
+  text-align: center;
+}
+
+#noUnsignedPOs {
+  text-align: center;
+  font-size: 16px;
+}
+
+.fas {
+  font-size: 30px;
+}
+
+#POList {
+  margin: 0 auto;
+  width: 800px;
+}
+
+#choosePOText {
+  width: 107px;
+  margin: 20px auto 10px;
+}
+
+#choosePOTable {
+  width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-top: 2px solid var(--dark-blue);
+  border-bottom: 2px solid var(--dark-blue);
+}
+
+#choosePOTableHeader {
+  background-color: var(--light-gray);
+  color: var(--dark-blue);
+}
+
+.choosePOTableRow {
+  /* border-top: 1px solid #003f87; */
+  /* border-bottom: 1px solid #003f87; */
+}
+
+.choosePOTableButton {
+  width: 100%;
+  font: 18px "Fira Sans";
+  border: none;
+  background-color: var(--light-gray);
+  color: var(--light-blue);
+}
+
+.choosePOTableRow button:hover {
+  background-color: var(--light-blue);
+  color: var(--white);
+}
+
+.choosePOTableRow button.active {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+/* ===================================================== WORK ON PO */
+
+#workOnPO {
+  display: none;
+}
+
+#nameAndAuthor {
+  display: table;
+  margin: 0 auto 10px;
+}
+
+#nameAndCompany {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+#poName {
+  display: inline-block;
+}
+#poNameLabel {
+  margin: 0 0 5px 0;
+  display: inline-block;
+  width: 85px;
+}
+#poTitle {
+  display: inline-block;
+  font: 18px "Fira Sans";
+  font-weight: 300;
+  margin: 0 30px 0 0;
+}
+#editPOTitle {
+
+}
+#inputPOName {
+  display: inline-block;
+  width: 250px;
+  background-color: var(--light-gray);
+  font: 18px "Fira Sans";
+  font-weight: 300;
+  border: none;
+  border-bottom: 2px solid var(--dark-blue);
+}
+#company {
+  width: 343px;
+}
+#companyText {
+  display: inline-block;
+  width: 85px;
+  margin: 12px 0;
+}
+#companyName {
+  display: inline-block;
+  font: 18px "Fira Sans";
+  font-weight: 300;
+  margin: 12px 0;
+  width: 185px;
+}
+#companyChoose {
+  display: inline-block;
+  padding: 5px 7px;
+  background-color: var(--light-gray);
+  color: var(--light-blue);
+  font: 16px "Fira Sans";
+  border: none;
+  width: 68px;
+}
+#company button:hover {
+  background-color: var(--light-blue);
+  color: var(--white);
+}
+#company button.active {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+#sign {
+  margin: 12px 0;
+}
+#poTitle button:hover {
+  background-color: var(--light-blue);
+  color: var(--white);
+}
+#poTitle button.active {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+#editPOTitle {
+  display: inline-block;
+  padding: 2px 5px;
+  background-color: var(--light-gray);
+  color: var(--light-blue);
+  font: 18px "Fira Sans";
+  border: none;
+}
+#areYouSure {
+  display: inline-block;
+  display: none;
+}
+#definitelySign {
+  display: inline-block;
+  display: none;
+  padding: 5px 7px;
+  background-color: var(--light-gray);
+  color: var(--light-blue);
+  font: 16px "Fira Sans";
+  border: none;
+}
+#dontSign {
+  display: inline-block;
+  display: none;
+  padding: 5px 7px;
+  background-color: var(--light-gray);
+  color: var(--light-blue);
+  font: 16px "Fira Sans";
+  border: none;
+}
+
+#author {
+  display: inline-block;
+}
+
+#authorText {
+  display: inline-block;
+  margin: 0 5px 0 5px;
+}
+
+#authorName {
+  display: inline-block;
+  font: 18px "Fira Sans";
+  font-weight: 300;
+  margin: 0;
+}
+
+#items {
+  display: table;
+  margin: 0 auto;
+}
+
+#itemInput {
+  display: table;
+  margin: 0 auto;
+}
+
+#ItemInputFormParent {
+  display: table;
+  margin: 0 auto;
+}
+
+#itemInputForm {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+.itemInputRow {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 5px;
+}
+
+.currencyInput {
+  border: 1px solid #949799;
+  font: 15px "Fira Sans";
+  background-color: var(--white);
+  margin-right: 5px;
+  padding-left: 1px;
+}
+
+.currencyInput input {
+  border: 0;
+}
+
+.itemInputText {
+  display: inline-block;
+  font: 15px "Fira Sans";
+  margin: 0px 5px 0px 0;
+}
+
+.itemInputField {
+  display: inline-block;
+  margin-right: 5px;
+  font: 15px "Fira Sans";
+  font-weight: 300;
+  background-color: var(--white);
+  border: 1px solid #949799;
+}
+
+#inputPartNumber {
+  width: 85px;
+}
+
+#inputPartName {
+  width: 200px;
+}
+
+#inputURL {
+  width: 200px;
+}
+
+#inputQuantity {
+  width: 50px;
+}
+
+#inputUnitPriceText {
+  margin-right: 1px;
+}
+
+#inputUnitPrice {
+  width: 50px;
+}
+
+#inputUnitDiscountText {
+  margin-right: 1px;
+}
+
+#inputUnitDiscount {
+  width: 50px;
+}
+
+#itemSubmit {
+  display: inline-block;
+  padding: 2px 5px;
+  background-color: var(--light-gray);
+  color: var(--light-blue);
+  font: 15px "Fira Sans";
+  border: none;
+  margin: 0 5px 0 auto;
+}
+
+#itemInputForm button:hover {
+  background-color: var(--light-blue);
+  color: var(--white);
+}
+
+#itemInputForm button.active {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+/* ========================================================= ITEM TABLE */
+
+#itemTable {
+  display: table;
+  margin: 10px auto;
+  border-collapse: collapse;
+  border-top: 2px solid var(--dark-blue);
+  border-bottom: 2px solid var(--dark-blue);
+}
+
+#itemTableHeader {
+  background-color: var(--light-gray);
+  color: var(--dark-blue);
+}
+
+.itemTableCell {
+  font: 15px "Fira Sans";
+}
+
+.itemTableButton {
+  display: inline-block;
+  padding: 3px 7px;
+  background-color: var(--light-gray);
+  color: var(--light-blue);
+  font: 15px "Fira Sans";
+  border: none;
+}
+
+#columnButton button:hover {
+  background-color: var(--light-blue);
+  color: var(--white);
+}
+#columnButton button.active {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+#columnNumber {
+
+}
+
+#columnName {
+
+}
+
+#columnQuantity {
+  width: 80px;
+}
+
+#columnPrice {
+  width: 80px;
+}
+
+#columnDiscount {
+  width: 100px;
+}
+
+#columnSubtotal {
+  width: 80px;
+}

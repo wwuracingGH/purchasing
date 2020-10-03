@@ -1,0 +1,98 @@
+extends layout
+
+block content
+  div#top
+    div#header
+      img#logo(src="images/V61LogoBlue(200x109).png" alt="V61 Logo")
+      div#headerSpacer
+      h1#headerText Purchasing
+      
+    if (user)
+      div#tabBar
+        button.tabs#defaultTab(type='button', onclick='tabSelect(event, "contentPO")') Purchase orders
+        button.tabs(type='button', onclick='tabSelect(event, "contentMasterBudget")') Master budget
+        button.tabs(type='button', onclick='tabSelect(event, "contentSettings")') Settings
+      
+  div.tabContent#contentPO
+    button.btnChoosePO#btnCreatePO(type='button', onclick="createPO(event)") Create a new PO
+    div#or
+      p or
+    button.btnChoosePO#btnEditPO(type='button', onclick="editPO(event)") Edit an existing PO
+  
+  div.tabContent#systemList
+    p#chooseSystemText Choose a system:
+    div#chooseSystemButtons
+      //button.system Aerodynamics
+      //button.system Chassis
+      //button.system Electronics
+      //button.system Ergonomics
+      //button.system Powertrain
+      //button.system Suspension
+  
+  div.tabContent#loadingPOs
+    p Loading...
+    i.fas.fa-spinner.fa-spin
+  
+  div.tabContent#noUnsignedPOs
+    p No unsigned purchase orders in this system
+  
+  //This appears when the the POList fails when getting the author name or the company name
+  div.tabContent#whoops
+    p This isn't supposed to appear. If you see this message, complain to Peter about it.
+  
+  div.tabContent#POList
+    p#choosePOText Choose a PO:
+    table#choosePOTable(border='0')
+  
+  div.tabContent#workOnPO
+    div#items
+      div#nameAndAuthor
+        p#poNameLabel PO name:
+        div#poName
+        //- input#inputPOName(type='text', autofocus)
+        p#authorText Author:
+        div#author
+      div#ItemInputFormParent
+        form#itemInputForm
+          div.itemInputRow
+            label.itemInputText(for='inputPartNumber') Part #:
+            input.itemInputField#inputPartNumber(type='text')
+            label.itemInputText(for='inputPartName') Part name:
+            input.itemInputField#inputPartName(type='text')
+            label.itemInputText(for='inputURL') Link to item:
+            input.itemInputField#inputURL(type='url')
+          div.itemInputRow
+            label.itemInputText(for='inputQuantity') Quantity:
+            input.itemInputField#inputQuantity(type='text', pattern='[0-9]*(\\.[0-9]*)?')
+            label.itemInputText#inputUnitPriceText(for='inputUnitPrice') Unit price: $
+            input.itemInputField#inputUnitPrice(type='text', pattern='[0-9]*(\\.[0-9]*)?')
+            label.itemInputText#inputUnitDiscountText(for='inputUnitDiscount') Unit discount: $
+            input.itemInputField#inputUnitDiscount(type='text', pattern='[0-9]*(\\.[0-9]*)?')
+            label.itemInputText Subtotal:
+            label.itemInputText#inputSubtotal $0.00
+            button#itemSubmit Add to list
+      table#itemTable(border='0')
+      
+  div.tabContent#contentMasterBudget
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi finibus ornare purus, vel mollis odio. Maecenas eu malesuada risus, id elementum dolor. Sed consequat dapibus elit, vel rutrum ligula finibus in. Fusce bibendum ante vitae odio ultricies, nec egestas nunc laoreet. Curabitur in tincidunt sem. Praesent maximus velit elit, eget ultrices metus porta nec. Nullam ullamcorper risus nulla, quis condimentum felis fringilla nec.
+
+    p Sed mollis sem in lorem fermentum suscipit. Ut lacinia sagittis urna, et porta massa imperdiet ac. Mauris vestibulum sapien nec dolor maximus, at hendrerit neque facilisis. Sed aliquet porttitor ex, vel accumsan nibh ullamcorper in. Fusce a felis risus. Etiam tempor justo at dictum ornare. In aliquet justo at enim ultrices posuere. Cras non vehicula mi. Pellentesque porttitor urna eros, quis accumsan purus aliquet sit amet. Vestibulum eget ornare ante, ac imperdiet nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer mattis sollicitudin dolor sed rhoncus. Sed faucibus ex eget erat luctus rhoncus. Nam efficitur ligula eros, vitae viverra orci pretium in. Integer sodales mauris viverra enim eleifend, vitae vulputate lectus euismod.
+
+    p Cras id elit aliquam, dictum metus id, suscipit lacus. Vivamus non augue tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris at diam in nisi pulvinar egestas sit amet in tellus. Vivamus congue libero nibh, et tristique enim maximus ac. Vestibulum dapibus ex id mauris cursus, nec dignissim metus euismod. Vestibulum tempus in orci vel consequat.
+
+    p Ut congue turpis eu sapien ultrices bibendum et at nunc. Pellentesque lacus ante, mollis sit amet dictum a, lacinia ac nisl. Mauris non enim urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut eu hendrerit tortor. Aenean et elementum eros. Duis sed erat et dolor aliquet euismod eget eu ante.
+
+    p Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc ut sem rutrum, aliquam tellus ut, congue dui. Maecenas aliquet eget eros vitae lacinia. Maecenas aliquet et odio eu mattis. Morbi eu sem tristique, sollicitudin tortor quis, semper massa. Cras ac posuere odio, et ultrices libero. Pellentesque eu ullamcorper leo. Suspendisse vel orci eu mauris tincidunt finibus. Aenean sodales sagittis turpis ut elementum. Proin facilisis, elit ut bibendum volutpat, quam arcu cursus elit, quis dictum enim purus vel eros. Etiam convallis ex quis massa rhoncus aliquet. Sed luctus molestie sem vitae venenatis.
+
+    p Nam auctor erat ut libero vulputate, id porttitor lacus pellentesque. Duis ac facilisis mi, quis faucibus augue. Mauris eget libero nunc. Integer ex risus, pretium id purus vel, ultricies semper leo. In a eleifend libero. Praesent sodales suscipit tempus. Ut sodales eu lorem quis lacinia. Aliquam semper, justo in dapibus hendrerit, mauris justo consequat risus, at imperdiet sapien ipsum quis leo. Nunc tincidunt risus et dolor euismod lacinia. Integer viverra eros non nulla fringilla, vel posuere arcu lacinia. Vestibulum in sodales velit. Aenean ac quam sollicitudin felis euismod convallis. Praesent ultrices turpis sit amet lacus placerat congue. Curabitur quis pulvinar felis. Proin aliquam tristique lacus, ac commodo ex auctor vitae. Nunc nec sapien at ipsum interdum lobortis vel quis ligula.
+
+    //p Nulla rhoncus sollicitudin quam, sit amet placerat lacus vestibulum eget. Integer auctor, est vel tincidunt consectetur, mauris massa malesuada nisi, et ultricies ipsum diam et lorem. Donec et mauris non sapien finibus pulvinar. Donec metus sapien, dictum id auctor eget, tristique sed libero. Donec hendrerit velit quis odio luctus ultricies. Mauris sed lectus augue. Quisque bibendum lectus eu mi lacinia, non laoreet ipsum luctus. Nullam non accumsan odio. Maecenas porta est justo, non commodo sem tempor vel. Sed scelerisque id massa vitae pulvinar. Sed quis quam nec felis vestibulum finibus. Pellentesque elementum diam sed magna efficitur, id egestas odio pretium.
+
+    //p Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque ut odio tempor, semper eros vitae, tempus mi. Sed vehicula dolor at rutrum pellentesque. Donec tincidunt orci eget purus tincidunt sollicitudin. Aliquam at volutpat purus. Donec posuere arcu nec dolor mollis, quis placerat mi iaculis. Proin consequat turpis id nisl bibendum pellentesque. Aliquam tempor bibendum iaculis.
+
+    //p Nulla tempor sapien lacus, a eleifend sapien sollicitudin eu. Fusce nec erat consectetur, tincidunt sapien in, tincidunt elit. Vestibulum lobortis et mauris vel consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ligula diam, auctor id ornare sit amet, pretium ut massa. Nulla ut massa mi. Cras non nisi ultrices, ullamcorper nulla vestibulum, luctus magna. Sed id libero ut mauris semper viverra. Sed in tincidunt massa. Sed congue dapibus dolor.
+
+    //p Etiam congue dui sem. Phasellus tristique consequat dignissim. Donec nec augue feugiat, sollicitudin odio a, elementum nibh. Sed ut bibendum ante, at eleifend erat. Etiam faucibus bibendum maximus. Sed tempus nisl diam, vitae vulputate magna consequat ac. Sed ullamcorper, lectus non commodo faucibus, nisl tortor iaculis urna, eget placerat lacus nulla vitae ipsum. Fusce commodo libero ut sapien scelerisque, id euismod elit auctor. Suspendisse potenti. Maecenas in felis lorem. Nulla pellentesque ac ex non semper. Nulla gravida tincidunt laoreet. Curabitur quis sodales nisi, nec volutpat odio. Pellentesque porttitor ex vel venenatis sagittis. 
+
+  div.tabContent#contentSettings
+    p Settings
