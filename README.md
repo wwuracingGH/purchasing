@@ -25,7 +25,7 @@ https://nodejs.org/en/download/
 
 ### Clone the repository
 
-Open a command line and navigate to whatever folder you want to store the purchasing repo in. Run this command to download the repository:
+Open a command line and navigate to whatever folder you want to store the purchasing system code in. Run this command to download the repository:
 ```
 -> git clone https://github.com/wwuracingGH/purchasing
 ```
